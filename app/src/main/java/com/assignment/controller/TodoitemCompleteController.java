@@ -70,7 +70,7 @@ public class TodoitemCompleteController extends HttpServlet{
         JSONObject json = new JSONObject();
         PrintWriter out = response.getWriter();
 
-        int id = Integer.parseInt(request.getHeader("id"));
+        int id = request.getIntHeader("id");
 
         try {
 
