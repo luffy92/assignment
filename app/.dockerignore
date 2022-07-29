@@ -1,0 +1,10 @@
+.vscode
+.dockerignore
+build.sh
+.git
+.gitignore
+README.md
+run.sh
+/target/*
+Dockerfile
+java.iml
