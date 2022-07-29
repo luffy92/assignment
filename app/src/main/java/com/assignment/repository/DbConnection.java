@@ -6,7 +6,8 @@ import java.sql.SQLException;
 
 public class DbConnection {
 
-    static String host = "mysqlapp";
+    // static String host = "mysqlapp";
+    static String host = "localhost";
     static String port = "3306";
     static String db_name = "assignment";
     static String username = "root";
