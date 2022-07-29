@@ -4,7 +4,8 @@ services:
 
   mysqlapp:
     container_name: mysql_container
-    image: luffy92/assignment_mysql
+    build: ./db
+    image: assignment/mysql
     ports:
       - 3306:3306
     networks:
@@ -12,7 +13,8 @@ services:
 
   javaapp:
     container_name: app_container
-    image: luffy92/assignment_java
+    build: ./app
+    image: assignment/app
     ports:
       - 8080:8080
     networks:
