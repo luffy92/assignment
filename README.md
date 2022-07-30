@@ -38,7 +38,7 @@ docker run -d -p 3306:3306 --name mysqlapp my-mysql
 or
 
 ```sh
-docker run -d -p 3306:3306 --name luffy92/assignment_mysql my-mysql
+docker run -d -p 3306:3306 --name mysqlapp luffy92/assignment_mysql 
 ```
 
 ### Manually start the java container
@@ -55,7 +55,7 @@ docker run -d -p 8080:8080 --link mysqlapp:mysqlapp --name javaapp my-java
 or
 
 ```sh
-docker run -d -p 8080:8080 --link mysqlapp:mysqlapp --name luffy92/assignment_java my-java
+docker run -d -p 8080:8080 --link mysqlapp:mysqlapp --name javaapp luffy92/assignment_java
 ```
 
 ### Create the network
