@@ -98,7 +98,7 @@ public class TodoitemController extends HttpServlet{
         JSONObject json = new JSONObject();
         PrintWriter out = response.getWriter();
 
-        int id = Integer.parseInt(request.getHeader("id"));
+        int id = request.getIntHeader("id");
 
         try {
 
@@ -131,16 +131,24 @@ public class TodoitemController extends HttpServlet{
         JSONObject json = new JSONObject();
         PrintWriter out = response.getWriter();
 
-        int id = Integer.parseInt(request.getHeader("id"));
+        int id = request.getIntHeader("id");
 
         try {
 
             if(TodoitemRepository.exits(id)){
                 Todoitem item = TodoitemRepository.get(id);
 
-                item.setName(request.getHeader("name"));
-                item.setDescription(request.getHeader("description"));
-                item.setCompleted(Boolean.parseBoolean(request.getHeader("complete")));
+                if(request.getHeader("name") != null){
+                    item.setName(request.getHeader("name"));
+                }
+
+                if(request.getHeader("description") != null){
+                    item.setDescription(request.getHeader("description"));
+                }
+
+                if(request.getHeader("completed") != null){
+                    item.setCompleted(Boolean.parseBoolean(request.getHeader("completed")));
+                }
 
                 TodoitemRepository.save(item);
                 item = TodoitemRepository.get(id);
