@@ -35,6 +35,12 @@ And then run the command to run the container
 docker run -d -p 3306:3306 --name mysqlapp my-mysql
 ```
 
+or
+
+```sh
+docker run -d -p 3306:3306 --name luffy92/assignment_mysql my-mysql
+```
+
 ### Manually start the java container
 Goto the app folder and run the following command to build the java image
 ```sh
@@ -44,6 +50,12 @@ docker build -t my-java .
 And then run the command to run the container
 ```sh
 docker run -d -p 8080:8080 --link mysqlapp:mysqlapp --name javaapp my-java
+```
+
+or
+
+```sh
+docker run -d -p 8080:8080 --link mysqlapp:mysqlapp --name luffy92/assignment_java my-java
 ```
 
 ### Create the network
